@@ -14,6 +14,15 @@ public class Hospital {
         this.longitude = longitude;
     }
 
+    public Hospital(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public Hospital() {
+
+    }
+
     public String getName() {
         return name;
     }

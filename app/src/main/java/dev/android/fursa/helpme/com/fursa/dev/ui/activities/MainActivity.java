@@ -2,6 +2,7 @@ package dev.android.fursa.helpme.com.fursa.dev.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity implements MainView {
 
     }
 
+
     @Override
     protected int getMainContentLayout() {
         return R.layout.activity_main;
@@ -42,13 +44,18 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void startSignIn() {
         VKSdk.login(this, ApiConst.DEFAULT_LOGIN_SCOPE);
+        Log.d(MainActivity.class.getSimpleName(), "startSignIn");
         setContent(new HospitalListFragment());
+        Log.d(MainActivity.class.getSimpleName(), "startSignIn 2");
+
     }
 
     @Override
     public void signedId() {
         Toast.makeText(this, "Current uid = " + CurrentUser.getId(), Toast.LENGTH_SHORT).show();
         setContent(new HospitalListFragment());
+        Log.d(MainActivity.class.getSimpleName(), "signedId");
+
     }
 
 

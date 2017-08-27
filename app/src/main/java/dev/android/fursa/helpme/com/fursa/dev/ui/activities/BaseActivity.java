@@ -25,8 +25,8 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyApplication.getApplicationComponent().inject(this);
         setContentView(R.layout.activity_base);
+        MyApplication.getApplicationComponent().inject(this);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
