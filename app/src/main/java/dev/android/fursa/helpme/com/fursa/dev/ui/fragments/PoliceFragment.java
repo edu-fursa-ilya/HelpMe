@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 
-public class HospitalFragment extends BaseFragment implements ItemListView {
+public class PoliceFragment extends BaseFragment implements ItemListView {
 
     @Inject
     Api mApi;
@@ -34,9 +34,10 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
     private BaseAdapter mBaseAdapter;
     private ViewGroup progress;
 
-    public HospitalFragment() {
+    public PoliceFragment() {
 
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,21 +47,23 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        showProgressBar();
-        loadData();
-    }
-
-
-    @Override
     protected int getMainContentLayout() {
-        return R.layout.fragment_hospital;
+        return R.layout.fragment_police;
     }
 
     @Override
     public int onCreateToolbarTitle() {
-        return R.string.hospital_list_fragment_title;
+        return R.string.police_title;
+    }
+
+    @Override
+    public void showProgressBar() {
+        progress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        progress.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -78,18 +81,15 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
     }
 
     @Override
-    public void showProgressBar() {
-        progress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideProgressBar() {
-        progress.setVisibility(View.GONE);
+    public void onResume() {
+        super.onResume();
+        showProgressBar();
+        loadData();
     }
 
     @Override
     public void loadData() {
-        mApi.getPlace(ApiConst.HOSPITAL, ApiConst.API_KEY, ApiConst.LANGUAGE).enqueue(new Callback<Response>() {
+        mApi.getPlace(ApiConst.POLICE, ApiConst.API_KEY, ApiConst.LANGUAGE).enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 List<ListItemModel> list = new ArrayList<ListItemModel>();
@@ -108,7 +108,6 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
                 t.printStackTrace();
             }
         });
-
     }
 
     @Override
@@ -120,7 +119,7 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
     @Override
     public void initViewComponents(View root) {
         progress = (ViewGroup) root.findViewById(R.id.progress);
-        mRecyclerView = (RecyclerView) root.findViewById(R.id.rv_hospital);
+        mRecyclerView = (RecyclerView) root.findViewById(R.id.rv_police);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 }

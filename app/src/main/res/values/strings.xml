@@ -5,5 +5,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hospital_list_fragment_title">Больницы</string>
     <string name="info_title">Инфо</string>
+    <string name="police_title">Полиция</string>
     <integer name="com_vk_sdk_AppId">6161754</integer>
 </resources>

@@ -16,7 +16,7 @@ import dev.android.fursa.helpme.com.fursa.dev.app.ApiConst;
 import dev.android.fursa.helpme.com.fursa.dev.app.MyApplication;
 import dev.android.fursa.helpme.com.fursa.dev.mvp.presenter.MainPresenter;
 import dev.android.fursa.helpme.com.fursa.dev.mvp.view.MainView;
-import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalFragment;
+import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.PoliceFragment;
 import dev.android.fursa.helpme.com.fursa.dev.user.CurrentUser;
 
 public class MainActivity extends BaseActivity implements MainView {
@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivity implements MainView {
     public void startSignIn() {
         VKSdk.login(this, ApiConst.DEFAULT_LOGIN_SCOPE);
         Log.d(MainActivity.class.getSimpleName(), "startSignIn");
-        setContent(new HospitalFragment());
+        setContent(new PoliceFragment());
         Log.d(MainActivity.class.getSimpleName(), "startSignIn 2");
 
     }
@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void signedId() {
         Toast.makeText(this, "Current uid = " + CurrentUser.getId(), Toast.LENGTH_SHORT).show();
-        setContent(new HospitalFragment());
+        setContent(new PoliceFragment());
         Log.d(MainActivity.class.getSimpleName(), "signedId");
 
     }

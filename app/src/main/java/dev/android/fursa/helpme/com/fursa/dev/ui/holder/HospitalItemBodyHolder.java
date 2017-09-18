@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import dev.android.fursa.helpme.R;
-import dev.android.fursa.helpme.com.fursa.dev.model.body.HospitalItemBodyViewModel;
+import dev.android.fursa.helpme.com.fursa.dev.model.body.ListItemModel;
 
-public class HospitalItemBodyHolder extends BaseViewHolder<HospitalItemBodyViewModel>{
+public class HospitalItemBodyHolder extends BaseViewHolder<ListItemModel>{
 
     public TextView mTitle;
     public TextView mAddress;
@@ -21,9 +21,9 @@ public class HospitalItemBodyHolder extends BaseViewHolder<HospitalItemBodyViewM
     }
 
     @Override
-    public void bindViewHolder(HospitalItemBodyViewModel hospitalItemBodyViewModel) {
-        mTitle.setText(hospitalItemBodyViewModel.getTitle());
-        mAddress.setText(hospitalItemBodyViewModel.getAddress());
+    public void bindViewHolder(ListItemModel listItemModel) {
+        mTitle.setText(listItemModel.getTitle());
+        mAddress.setText(listItemModel.getAddress());
     }
 
     @Override

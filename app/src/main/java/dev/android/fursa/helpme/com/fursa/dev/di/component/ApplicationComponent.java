@@ -9,6 +9,7 @@ import dev.android.fursa.helpme.com.fursa.dev.di.module.RestModule;
 import dev.android.fursa.helpme.com.fursa.dev.ui.activities.BaseActivity;
 import dev.android.fursa.helpme.com.fursa.dev.ui.activities.MainActivity;
 import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalFragment;
+import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.PoliceFragment;
 
 @Singleton
 @Component(modules = {ApplicationModule.class, ManagerModule.class, RestModule.class})
@@ -20,5 +21,6 @@ public interface ApplicationComponent {
 
     //fragments
     void inject(HospitalFragment fragment);
+    void inject(PoliceFragment fragment);
 
 }

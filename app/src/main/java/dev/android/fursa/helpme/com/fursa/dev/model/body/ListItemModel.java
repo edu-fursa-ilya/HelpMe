@@ -7,12 +7,12 @@ import dev.android.fursa.helpme.com.fursa.dev.model.view.BaseViewModel;
 import dev.android.fursa.helpme.com.fursa.dev.ui.holder.BaseViewHolder;
 import dev.android.fursa.helpme.com.fursa.dev.ui.holder.HospitalItemBodyHolder;
 
-public class HospitalItemBodyViewModel extends BaseViewModel {
+public class ListItemModel extends BaseViewModel {
 
     private String mTitle;
     private String mAddress;
 
-    public HospitalItemBodyViewModel(String mTitle, String mAddress) {
+    public ListItemModel(String mTitle, String mAddress) {
         this.mTitle = mTitle;
         this.mAddress = mAddress;
     }
