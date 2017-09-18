@@ -42,12 +42,15 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MyApplication.getApplicationComponent().inject(this);
+
+        loadData();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         showProgressBar();
+        loadData();
     }
 
 
@@ -67,6 +70,12 @@ public class HospitalFragment extends BaseFragment implements ItemListView {
 
         initViewComponents(view);
         initListAdapter(mRecyclerView);
+        loadData();
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         loadData();
     }
 
