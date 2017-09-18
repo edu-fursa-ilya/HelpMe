@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface PlaceRequest {
+public interface Api {
 
     @GET("/maps/api/place/textsearch/json?")
     Call<Response> getPlace(

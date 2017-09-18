@@ -6,11 +6,9 @@ import dagger.Component;
 import dev.android.fursa.helpme.com.fursa.dev.di.module.ApplicationModule;
 import dev.android.fursa.helpme.com.fursa.dev.di.module.ManagerModule;
 import dev.android.fursa.helpme.com.fursa.dev.di.module.RestModule;
-import dev.android.fursa.helpme.com.fursa.dev.rest.models.Hospital;
 import dev.android.fursa.helpme.com.fursa.dev.ui.activities.BaseActivity;
 import dev.android.fursa.helpme.com.fursa.dev.ui.activities.MainActivity;
-import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.BaseFragment;
-import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalListFragment;
+import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalFragment;
 
 @Singleton
 @Component(modules = {ApplicationModule.class, ManagerModule.class, RestModule.class})
@@ -21,7 +19,6 @@ public interface ApplicationComponent {
     void inject(MainActivity activity);
 
     //fragments
-    void inject(HospitalListFragment fragment);
-
+    void inject(HospitalFragment fragment);
 
 }

@@ -4,7 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import dev.android.fursa.helpme.com.fursa.dev.rest.PlaceRequest;
+import dev.android.fursa.helpme.com.fursa.dev.rest.Api;
 import dev.android.fursa.helpme.com.fursa.dev.rest.RestClient;
 
 @Module
@@ -25,7 +25,7 @@ public class RestModule {
 
     @Provides
     @Singleton
-    public PlaceRequest provideGoogleApi() {
-        return mRestClient.createService(PlaceRequest.class);
+    public Api provideGoogleApi() {
+        return mRestClient.createService(Api.class);
     }
 }

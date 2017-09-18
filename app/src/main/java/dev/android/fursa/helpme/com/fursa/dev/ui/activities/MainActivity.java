@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
@@ -17,7 +16,7 @@ import dev.android.fursa.helpme.com.fursa.dev.app.ApiConst;
 import dev.android.fursa.helpme.com.fursa.dev.app.MyApplication;
 import dev.android.fursa.helpme.com.fursa.dev.mvp.presenter.MainPresenter;
 import dev.android.fursa.helpme.com.fursa.dev.mvp.view.MainView;
-import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalListFragment;
+import dev.android.fursa.helpme.com.fursa.dev.ui.fragments.HospitalFragment;
 import dev.android.fursa.helpme.com.fursa.dev.user.CurrentUser;
 
 public class MainActivity extends BaseActivity implements MainView {
@@ -35,7 +34,6 @@ public class MainActivity extends BaseActivity implements MainView {
 
     }
 
-
     @Override
     protected int getMainContentLayout() {
         return R.layout.activity_main;
@@ -45,7 +43,7 @@ public class MainActivity extends BaseActivity implements MainView {
     public void startSignIn() {
         VKSdk.login(this, ApiConst.DEFAULT_LOGIN_SCOPE);
         Log.d(MainActivity.class.getSimpleName(), "startSignIn");
-        setContent(new HospitalListFragment());
+        setContent(new HospitalFragment());
         Log.d(MainActivity.class.getSimpleName(), "startSignIn 2");
 
     }
@@ -53,11 +51,10 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void signedId() {
         Toast.makeText(this, "Current uid = " + CurrentUser.getId(), Toast.LENGTH_SHORT).show();
-        setContent(new HospitalListFragment());
+        setContent(new HospitalFragment());
         Log.d(MainActivity.class.getSimpleName(), "signedId");
 
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
